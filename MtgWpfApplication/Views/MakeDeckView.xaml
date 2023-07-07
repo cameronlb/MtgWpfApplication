@@ -1,0 +1,56 @@
+﻿<UserControl x:Class="MtgWpfApplication.Views.MakeDeckView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MtgWpfApplication.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="350*"/>
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+
+        <TextBlock 
+            Grid.Row="0"
+            Margin="5, 5, 5, 0"
+            FontSize="20"
+            Text="Deck name"
+        />
+        <TextBox
+            Grid.Row="1"
+            Margin="5, 0, 5, 5"
+            Text="{Binding DeckName, UpdateSourceTrigger=PropertyChanged}"
+        />
+
+        <TextBlock
+            Grid.Row="2"
+            FontSize="20"
+            Margin="5, 5, 5, 0"
+            Text="Deck list"
+        />
+
+        <TextBox
+                x:Name="tbDeckList"
+                TextWrapping="Wrap"
+                AcceptsReturn="True"
+                VerticalScrollBarVisibility="Visible"
+                Grid.Row="3"
+                Margin="5, 0, 5, 5"
+                Text="{Binding DeckList, UpdateSourceTrigger=PropertyChanged}"
+        />
+
+        <Button
+                Name="AnalyseButton"
+                Grid.Row="4"
+                Margin="5"
+                FontSize="20"
+                Content="Analyze Deck"
+                Command="{Binding AnalyzeCommand}"
+        />
+    </Grid>
+</UserControl>
