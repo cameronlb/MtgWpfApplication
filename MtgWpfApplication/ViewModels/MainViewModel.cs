@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MtgWpfApplication.ViewModels
 {
-    class MainViewModel : ViewModelBase
+    public class MainViewModel : ViewModelBase
     {
 
         public ViewModelBase MakeDeckViewModel { get; }

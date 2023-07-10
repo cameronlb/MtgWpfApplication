@@ -88,6 +88,19 @@ namespace MtgWpfApplication.ViewModels
             }
         }
 
+        private int _numoflands;
+
+        public int NumOfLands
+        { 
+            get { return _numoflands; }
+
+            set
+            {
+                _numoflands = value;
+                OnPropertyChanged(nameof(NumOfLands));
+            }
+        }
+
         public DeckAnalysisViewModel() 
         { 
         

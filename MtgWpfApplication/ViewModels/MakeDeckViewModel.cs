@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MtgWpfApplication.Commands;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,7 +8,7 @@ using System.Windows.Input;
 
 namespace MtgWpfApplication.ViewModels
 {
-    class MakeDeckViewModel : ViewModelBase
+    public class MakeDeckViewModel : ViewModelBase
     {
         private string _decklist;
 
@@ -38,8 +39,8 @@ namespace MtgWpfApplication.ViewModels
         public ICommand AnalyzeCommand { get; }
 
         public MakeDeckViewModel() 
-        { 
-        
+        {
+            AnalyzeCommand = new MakeDeckCommand(this);
         }
     }
 }

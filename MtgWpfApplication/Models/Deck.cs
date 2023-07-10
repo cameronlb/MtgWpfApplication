@@ -6,12 +6,15 @@ namespace MtgWpfApplication.Models
     public class Deck
     {
         public string Name { get; set; }
-        public List<string> CardList { get; set; }
+        public List<string> DeckList { get; set; }
+
+        public string strDeckList { get; set; }
         public List<Card> Cards { get; set; } = new List<Card>();
 
-        public Deck(string name)
+        public Deck(string name, string decklist)
         {
             Name = name;
+            strDeckList = decklist;
         }
         /// <summary>
         /// Add a card to the collection of cards.
@@ -35,15 +38,15 @@ namespace MtgWpfApplication.Models
         /// <param name="cardname">Name of magic the gathering card.</param>
         public void AddCardNameToList(string cardname) 
         {
-            CardList.Add(cardname);
+            DeckList.Add(cardname);
         }
         /// <summary>
         /// Remove a card name from the list of card names.
         /// </summary>
         /// <param name="cardname">Name of magic the gathering card.</param>
         public void RemoveCardNameFromList(string cardname) 
-        { 
-            CardList.Remove(cardname);
+        {
+            DeckList.Remove(cardname);
         }
 
     }
